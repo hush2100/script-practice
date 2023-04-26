@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    const submenus = document.querySelectorAll('.submenu');
+
+    submenus.forEach(submenu => {
+      const parentLink = submenu.parentElement.querySelector('a');
+
+      parentLink.addEventListener('click', event => {
+        event.preventDefault();
+        submenu.classList.toggle('show');
+      });
+
+      submenu.addEventListener('mouseleave', () => {
+        submenu.classList.remove('show');
+      });
+    });
+
+  </script>
+  <style>
+    .submenu {
+      display: none;
+    }
+
+    nav ul li:hover > .submenu {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li>
+          <a href="#">Services</a>
+          <ul class="submenu">
+            <li><a href="#">Service 1</a></li>
+            <li><a href="#">Service 2</a></li>
+            <li><a href="#">Service 3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+    
+  </header>
+  
+</body>
+</html>
