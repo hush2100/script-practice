@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 팝업 스타일 */
+/* 팝업 스타일 */
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    padding: 20px;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+.popup .close:hover {
+    color: #06D85F;
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+/* 첫 번째 팝업 위치 */
+#popup1:target .popup {
+    left: calc(50% - 300px);
+}
+
+/* 두 번째 팝업 위치 */
+#popup2:target .popup {
+    left: calc(50% + 300px);
+}
+
+
+  </style>
+  
+</head>
+<body>
+  팝업
+  <!-- 첫 번째 팝업 -->
+<div id="popup1">
+  <div class="popup">
+    <h2>팝업1 제목</h2>
+    <a class="close" href="#">×</a>
+    <div class="content">
+      <!-- 내용 -->
+      <img src="https://s.pstatic.net/shopping.phinf/20230110_20/04edd5cf-39b1-44d1-a45b-0d59c9507229.jpg?type=f214_292" alt="">
+    </div>
+  </div>
+</div>
+
+<!-- 두 번째 팝업 -->
+<div id="popup2">
+  <div class="popup">
+    <h2>팝업2 제목</h2>
+    <a class="close" href="#">×</a>
+    <div class="content">
+      <!-- 내용 -->
+      <img src="https://s.pstatic.net/shopping.phinf/20230110_20/04edd5cf-39b1-44d1-a45b-0d59c9507229.jpg?type=f214_292" alt="">
+    </div>
+  </div>
+</div>
+<script>
+opnePop('popup1')
+opnePop('popup2')
+function opnePop(popid){
+  document.getElementById(popid).style.display = 'block';
+}  
+// 두 번째 팝업 닫기
+document.getElementById('popup1-close').addEventListener('click', function(){
+    document.getElementById('popup1').style.display = 'none';
+});
+
+
+// 두 번째 팝업 닫기
+document.getElementById('popup2-close').addEventListener('click', function(){
+    document.getElementById('popup2').style.display = 'none';
+});
+  </script>
+</body>
+</html>
