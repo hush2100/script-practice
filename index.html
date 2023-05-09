@@ -6,20 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script type="module" defer src="./main.js"></script>
+  <style>
+    /* 
+    .child{width: 100px;font-size: 28px;background-color: #ff6600;position: absolute;} 
+    body{height: 1000px;padding: 500px 0;}*/
+    .parent{width: 300px;height: 200px;padding: 20px;overflow: auto;border: 10px solid #000;background-color: red;}
+    .child{width: 200px;height: 1000px;background-color: orange;border: 10px solid #000;font-size: 40px;}
+  </style>
 </head>
 <body>
  <!--
  <div class="parent">
-  
   <div class="child">1</div>
   텍스트1
   <div id="child2" class="child">2</div>
   텍스트2
  </div>
  --> 
+ <!-- 
  <div class="parent">
   <div class="child">1</div>
   <div class="child">2</div>
  </div>
+  -->
+ <div class="parent">
+  <div class="child">
+    <a href="http://www.naver.com" target="_blank">링크보기</a>
+  </div>
+ </div>
+ <input type="text">
 </body>
 </html>
